@@ -1,25 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Picture from './Picture'
+const london = 'https://upload.wikimedia.org/wikipedia/commons/f/f6/City_of_London_skyline_from_London_City_Hall_-_Oct_2008.jpg'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Picture eStyle={{ width: '100vw', height: '100vh', }} size={30} start={[40, 40]} zoom={2} src={london} />
       </div>
     );
   }
