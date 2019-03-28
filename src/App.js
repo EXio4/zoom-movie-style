@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Picture eStyle={{ width: '100vw', height: '100vh', }} size={30} start={[40, 40]} zoom={2} src={london} />
+        <Picture eStyle={{ width: '100vw', height: '100vh', }} sizeX={30} sizeY={30} start={[40, 40]} zoom={1} src={london} />
       </div>
     );
   }

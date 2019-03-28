@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 
-const Picture = ({ eStyle, iStyle, size, start, zoom, src }) => {
+const Picture = ({ eStyle, iStyle, sizeX, sizeY, start, zoom, src }) => {
     const bImg = `url("${src}")`
     const externalStyle = {
         ...eStyle,
@@ -16,14 +16,15 @@ const Picture = ({ eStyle, iStyle, size, start, zoom, src }) => {
         filter: 'blur(3px) saturate(0.35)',
     }
 
-    const iSizeW = `${size}%`
-    const iSizeH = iSizeW
-    const inv = zoom * (100 * (100/size))
+    const iSizeW = `${sizeX}%`
+    const iSizeH = `${sizeY}%`
+    const invX = zoom * (100 * (100/sizeX))
+    const invY = zoom * (100 * (100/sizeY))
     const sharedZoomStyle = {
         ...iStyle,
         position: 'absolute',
-        top: `${start[0]-size/2}%`,
-        left: `${start[1]-size/2}%`,
+        top: `${start[0] - sizeX/2.5}%`,
+        left: `${start[1] - sizeY/2.5}%`,
         width: iSizeW,
         height: iSizeH,
     }
@@ -32,7 +33,7 @@ const Picture = ({ eStyle, iStyle, size, start, zoom, src }) => {
         backgroundImage: bImg,
         backgroundPositionX: `${start[0]}%`,
         backgroundPositionY: `${start[1]}%`,
-        backgroundSize: `${inv}% ${inv}%`,
+        backgroundSize: `${invX}% ${invY}%`,
     }
     const zoomTintStyle = {
         ...sharedZoomStyle,
